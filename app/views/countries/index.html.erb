@@ -1,7 +1,11 @@
 <h1><%= pluralize(@countries.size, 'Country') %></h1>
 
+<%= link_to "Add new country", new_country_path  %>
+
 <ul>
   <% @countries.each do |country| %>
-  <li><%= link_to(country.name, country_path(country)) %></li>
+  <li><%= link_to(country.name, country_path(country)) %>
+    <%= image_for(country) %>
+  </li>
   <% end %>
 </ul>
