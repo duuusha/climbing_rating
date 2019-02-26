@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :states
   root "countries#index"
   # get "countries" => "countries#index"
   # get "countries/new" => "countries#new", as: "new_country"

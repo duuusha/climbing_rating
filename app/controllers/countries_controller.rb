@@ -15,8 +15,11 @@ class CountriesController < ApplicationController
 
   def update
     @country = Country.find(params[:id])
-    @country.update(country_params)
-    redirect_to @country
+    if @country.update(country_params)
+      redirect_to @country, notice: "Country successfully updated"
+    else
+      render :edit
+    end
   end
 
   def new
@@ -25,8 +28,11 @@ class CountriesController < ApplicationController
 
   def create
     @country = Country.new(country_params)
-    @country.save
-    redirect_to @country
+    if @country.save
+      redirect_to @country
+    else
+      render :new
+    end
   end
 
   def destroy

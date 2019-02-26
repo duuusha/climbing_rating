@@ -5,9 +5,9 @@ module CountriesHelper
 
   def image_for(country)
     if country.image_file_name.blank?
-      image_tag 'russia.png'
+      image_tag 'russia.png', width: 16
     else
-      image_tag country.image_file_name
+      image_tag country.image_file_name, width: 16
     end
   end
 end
