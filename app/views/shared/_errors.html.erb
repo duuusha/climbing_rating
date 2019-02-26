@@ -1,0 +1,13 @@
+<% if @country.errors.any? %>
+  <section id="errors">
+    <header>
+      <h2>Ooops! You data cannot be saved.</h2>
+      <h3>Please correct the following errors:</h3>
+    </header>
+    <ul>
+      <% @country.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </section>
+<%end %>

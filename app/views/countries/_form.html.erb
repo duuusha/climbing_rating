@@ -1,4 +1,7 @@
 <%= form_for(@country) do |f| %>
+
+  <%= render 'shared/errors' %>
+
   <p>
     <%= f.label :name %><br/>
     <%= f.text_field :name, autofocus: true %>
