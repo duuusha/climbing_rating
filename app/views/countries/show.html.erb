@@ -1,7 +1,12 @@
 <h1><%=@country.name %></h1>
 
-<p><%=@country.full_name %></p>
-<p><%=link_to "States", country_states_path(@country) %></p>
+<ul id="states">
+  <% @states.each do |state| %>
+    <li>
+      <%= link_to state.name, country_state_path(@country, state) %>
+    </li>
+  <% end %>
+</ul>
 
 
 <%= link_to "All countries", countries_path %>

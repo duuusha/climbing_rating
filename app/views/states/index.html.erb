@@ -6,9 +6,8 @@
 
 <ul id="states">
   <% @states.each do |state| %>
-<!--    <li><%#= link_to(state.name, state) %>-->
-<!--    </li>-->
-    <li><%= link_to(state.name) %>
+    <li>
+      <%= link_to(state.name) %>
     </li>
   <% end %>
 </ul>
