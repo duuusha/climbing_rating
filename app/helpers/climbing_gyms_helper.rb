@@ -1,0 +1,2 @@
+module ClimbingGymsHelper
+end
