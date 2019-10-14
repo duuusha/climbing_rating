@@ -5,7 +5,8 @@ class StatesController < ApplicationController
   end
 
   def show
-
+    @state = State.find(params[:id])
+    @cities = @state.cities
   end
 
   def new
