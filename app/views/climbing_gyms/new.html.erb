@@ -1,2 +1,29 @@
-<h1>ClimbingGyms#new</h1>
-<p>Find me in app/views/climbing_gyms/new.html.erb</p>
+<h1>Add a new gym</h1>
+
+<%= form_with model: ClimbingGym.new do |form| %>
+  <div class="field">
+    <% countries = options_from_collection_for_select(Country.all, 'id', 'name') %>
+    <%= form.label :country_id %>
+    <%= select_tag :country_id, countries %>
+  </div>
+  <div class="field">
+    <% states = options_from_collection_for_select(State.all, 'id', 'name') %>
+    <%= form.label :state_id %>
+    <%= select_tag :state_id, states %>
+  </div>
+<!--  <div class="field">
+    <%# cities = options_from_collection_for_select(City.all, 'id', 'name') %>
+    <%#= form.label :city_id %>
+    <%#= select_tag :city_id, cities %>
+  </div>-->
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+  <%= javascript_pack_tag 'location'%>
+<% end %>

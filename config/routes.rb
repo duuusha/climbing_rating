@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'climbing_gyms/index'
-  get 'climbing_gyms/show'
-  get 'climbing_gyms/new'
-  get 'climbing_gyms/create'
   root "countries#index"
   resources :countries do
     resources :states do
@@ -11,4 +7,13 @@ Rails.application.routes.draw do
   end
   resources :climbing_gyms
 
+  namespace 'api' do
+    get 'countries', to: 'locations#get_countries'
+    post 'countries', to: 'locations#get_countries'
+
+    get 'states', to: 'locations#get_states'
+    post 'states', to: 'locations#get_states'
+
+    get 'cities', to: 'locations#get_cities'
+  end
 end

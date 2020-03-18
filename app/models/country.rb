@@ -7,9 +7,5 @@ class Country < ApplicationRecord
   }
 
   has_many :states, dependent: :destroy
-  has_many :cities, dependent: :destroy
-
-  def self.specific_countries
-    where("name != 'Belarus'")
-  end
+  # has_many :cities, dependent: :destroy
 end

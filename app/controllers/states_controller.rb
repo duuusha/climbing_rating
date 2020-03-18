@@ -18,4 +18,6 @@ class StatesController < ApplicationController
     @state = State.new(params.require(:state).permit(:name, :country_id))
     @state.save
   end
+
+
 end

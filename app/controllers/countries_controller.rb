@@ -42,6 +42,8 @@ class CountriesController < ApplicationController
     redirect_to countries_url
   end
 
+
+
   private
 
   def country_params
