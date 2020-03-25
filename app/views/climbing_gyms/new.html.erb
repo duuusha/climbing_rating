@@ -2,12 +2,12 @@
 
 <%= form_with model: ClimbingGym.new do |form| %>
   <div class="field">
-    <% countries = options_from_collection_for_select(Country.all, 'id', 'name') %>
+    <%# countries = options_from_collection_for_select(Country.all, 'id', 'name') %>
     <%= form.label :country_id %>
-    <%= select_tag :country_id, countries %>
+    <%= select_tag :country_id, options_from_collection_for_select(@countries, 'id', 'name')%>
   </div>
   <div class="field">
-    <% states = options_from_collection_for_select(State.all, 'id', 'name') %>
+    <% states = options_from_collection_for_select(@states, 'id', 'name') %>
     <%= form.label :state_id %>
     <%= select_tag :state_id, states %>
   </div>
